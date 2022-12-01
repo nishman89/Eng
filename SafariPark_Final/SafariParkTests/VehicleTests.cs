@@ -11,6 +11,11 @@ namespace SafariParkTests
     public class VehicleTests
     {
         [Test]
+        public void FailingTest()
+        {
+            Assert.Fail();
+        }
+        [Test]
         public void WhenADefaultVehicleIsConstructedItsPositionIsZero()
         {
             Vehicle v = new Vehicle();
