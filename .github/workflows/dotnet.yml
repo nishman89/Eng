@@ -27,8 +27,7 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test /p:ExcludeByFile="**/program.cs" /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=lcov.info
-    - name : coverlet
+      run: dotnet test --collect:"XPlat Code Coverage" /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=lcov.info    - name : coverlet
       uses: b3b00/coverlet-action@1.1.9
       with:
         testProject: 'SafariPark_Final/SafariParkTests/SafariParkTests.csproj'
