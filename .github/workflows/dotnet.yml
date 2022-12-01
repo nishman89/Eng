@@ -24,14 +24,10 @@ jobs:
         dotnet-version: 6.0.x
     - name: Restore dependencies
       run: dotnet restore
-      working-directory: SafariPark_Final
     - name: Build
       run: dotnet build --no-restore
-      working-directory: SafariPark_Final
     - name: Test
       run: dotnet test --collect:"XPlat Code Coverage" /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=lcov.info
-      #new line
-      working-directory: SafariPark_Final
 
     - name : coverlet
       uses: b3b00/coverlet-action@1.1.9
@@ -40,3 +36,5 @@ jobs:
         output: 'lcov.info'
         outputFormat: 'lcov'
         excludes: '[program]*,[test]test.*'
+        
+
